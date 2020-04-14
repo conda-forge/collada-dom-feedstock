@@ -33,9 +33,9 @@ test:
   requires:
     - pkg-config
   commands:
-    - pkg-config --modversion {{ name }} # [unix]
-    - test $PREFIX/include/collada-dom2.5 # [unix]
-    - if not exist %PREFIX%\\Library\\include\\collada-dom2.5 exit 1 # [win]
+    - pkg-config --modversion {{ name }}  # [unix]
+    - test $PREFIX/include/collada-dom2.5  # [unix]
+    - if not exist %PREFIX%\\Library\\include\\collada-dom2.5 exit 1  # [win]
 
 about:
   home: https://sourceforge.net/p/collada-dom

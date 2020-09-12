@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 boost_cpp:
-- '1.72'
+- 1.74.0
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -9,13 +9,11 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '9'
+- '10'
 libxml2:
 - '2.9'
 macos_machine:
 - x86_64-apple-darwin13.4.0
-macos_min_version:
-- '10.9'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
@@ -23,5 +21,7 @@ pin_run_as_build:
     max_pin: x.x
   zlib:
     max_pin: x.x
+target_platform:
+- osx-64
 zlib:
 - '1.2'

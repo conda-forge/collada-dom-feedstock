@@ -1,5 +1,7 @@
 boost_cpp:
 - 1.74.0
+cdt_name:
+- cos6
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -7,11 +9,13 @@ channel_targets:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '7'
+- '9'
 docker_image:
-- condaforge/linux-anvil-comp7
+- quay.io/condaforge/linux-anvil-comp7
 libxml2:
 - '2.9'
+pcre:
+- '8'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
@@ -21,5 +25,8 @@ pin_run_as_build:
     max_pin: x.x
 target_platform:
 - linux-64
+zip_keys:
+- - cdt_name
+  - docker_image
 zlib:
 - '1.2'

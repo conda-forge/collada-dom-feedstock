@@ -18,6 +18,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
+    - make  # [unix]
   host:
     - boost-cpp
     - pcre

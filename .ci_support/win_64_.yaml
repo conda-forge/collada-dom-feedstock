@@ -7,7 +7,7 @@ cxx_compiler:
 libboost_devel:
 - '1.82'
 libxml2:
-- '2.11'
+- '2.12'
 pcre:
 - '8'
 target_platform:

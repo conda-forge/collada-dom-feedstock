@@ -11,7 +11,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '16'
+- '15'
 libboost_devel:
 - '1.84'
 libxml2:
@@ -22,8 +22,5 @@ pcre:
 - '8'
 target_platform:
 - osx-64
-zip_keys:
-- - c_stdlib_version
-  - MACOSX_DEPLOYMENT_TARGET
 zlib:
 - '1.2'

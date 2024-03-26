@@ -1,0 +1,5 @@
+# stay on older clang until upstream stops using the removed std::auto_ptr
+c_compiler_version:     # [osx]
+  - 15                  # [osx]
+cxx_compiler_version:   # [osx]
+  - 15                  # [osx]

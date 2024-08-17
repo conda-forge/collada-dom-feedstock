@@ -7,7 +7,7 @@ channel_targets:
 cxx_compiler:
 - vs2019
 libboost_devel:
-- '1.84'
+- '1.86'
 libxml2:
 - '2'
 pcre:
@@ -15,4 +15,4 @@ pcre:
 target_platform:
 - win-64
 zlib:
-- '1.2'
+- '1'

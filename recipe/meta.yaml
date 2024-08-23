@@ -8,9 +8,12 @@ package:
 source:
   url: https://github.com/rdiankov/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 3be672407a7aef60b64ce4b39704b32816b0b28f61ebffd4fbd02c8012901e0d
+  patches:
+    # Backport of https://github.com/rdiankov/collada-dom/pull/43
+    - patches/43.patch
 
 build:
-  number: 8
+  number: 9
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
@@ -53,3 +56,4 @@ about:
 extra:
   recipe-maintainers:
     - jcarpent
+    - traversaro

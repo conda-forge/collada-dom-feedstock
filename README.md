@@ -189,4 +189,5 @@ Feedstock Maintainers
 =====================
 
 * [@jcarpent](https://github.com/jcarpent/)
+* [@traversaro](https://github.com/traversaro/)
 

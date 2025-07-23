@@ -4,7 +4,7 @@ mkdir build
 cd build
 
 cmake ^
-    -G "NMake Makefiles" ^
+    -G "NMake Makefiles" -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -DCMAKE_BUILD_TYPE=Release ^
     %SRC_DIR%

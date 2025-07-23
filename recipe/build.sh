@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Make sure that vendored libraries are not used
+rm -rf ./dom/external-libs
+
 mkdir build
 cd build
 

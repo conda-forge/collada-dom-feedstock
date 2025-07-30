@@ -28,10 +28,8 @@ requirements:
     - pcre
     - libxml2
     - zlib
-  run:
-    - pcre
-    - libxml2
-    - zlib
+    - minizip
+    - uriparser
 
 test:
   requires:

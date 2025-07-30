@@ -23,6 +23,7 @@ requirements:
     - {{ stdlib("c") }}
     - cmake
     - make  # [unix]
+    - pkg-config
   host:
     - libboost-devel
     - pcre

@@ -1,5 +1,3 @@
-set PKG_CONFIG_PATH=%LIBRARY_PREFIX%\share\pkgconfig
-
 IF EXIST "%SRC_DIR%\dom\external-libs" (
     rmdir /s /q "%SRC_DIR%\dom\external-libs"
 )

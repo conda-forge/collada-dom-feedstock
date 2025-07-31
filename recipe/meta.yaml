@@ -11,6 +11,7 @@ source:
   patches:
     # Backport of https://github.com/rdiankov/collada-dom/pull/43
     - patches/43.patch
+    - patches/clean_compile_flags.patch
 
 build:
   number: 11

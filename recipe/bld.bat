@@ -7,7 +7,7 @@ cd build
 
 :: Ensure MiniZip headers are in the include path as the cmake's 
 :: imported target are not correctly used
-set "INCLUDE=%CONDA_PREFIX%\Library\include\minizip;%INCLUDE%"
+set "INCLUDE=%PREFIX%\Library\include\minizip;%INCLUDE%"
 
 cmake ^
     -G "NMake Makefiles" -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ^

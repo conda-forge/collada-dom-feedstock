@@ -1,0 +1,23 @@
+From 103eea58e15b9ed34413be477d90e8f6aa287b74 Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Thu, 31 Jul 2025 11:24:33 +0200
+Subject: [PATCH] Update CMakeLists.txt
+
+---
+ dom/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/dom/CMakeLists.txt b/dom/CMakeLists.txt
+index f7ffb27..f10d2ca 100644
+--- a/dom/CMakeLists.txt
++++ b/dom/CMakeLists.txt
+@@ -30,8 +30,8 @@ endif()
+ 
+ add_library(collada-dom SHARED ${COLLADA_BASE_SOURCES})
+ target_link_libraries(collada-dom ${COLLADA_LIBS})
++target_compile_options(collada-dom ${COLLADA_COMPILE_FLAGS})
+ set_target_properties(collada-dom PROPERTIES
+-  COMPILE_FLAGS "${COLLADA_COMPILE_FLAGS}"
+   LINK_FLAGS "${libpcrecpp_LDFLAGS_OTHERS}"
+   OUTPUT_NAME collada-dom${COLLADA_DOM_LIBRARY_SUFFIX}
+   CLEAN_DIRECT_OUTPUT 1

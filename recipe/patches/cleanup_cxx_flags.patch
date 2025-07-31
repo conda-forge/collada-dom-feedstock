@@ -1,0 +1,32 @@
+From 1f41d33c81ed723abc348dff77c1bc83b19e882b Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Thu, 31 Jul 2025 11:32:47 +0200
+Subject: [PATCH] Cleanup CXX_FLAGS
+
+---
+ CMakeLists.txt | 12 ------------
+ 1 file changed, 12 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 20635b2..e47aae7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -117,18 +117,6 @@ if( CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX )
+   add_definitions("-fno-strict-aliasing -Wall")
+ endif()
+ 
+-if( CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX )
+-  set(CMAKE_CXX_FLAGS_RELEASE "-O2")# -DNDEBUG -DBOOST_DISABLE_ASSERTS -D_SECURE_SCL=0") # this practically removes all checks making it a very dangerous options to play with
+-  set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
+-  set(CMAKE_CXX_FLAGS_DEBUG "-g -D_DEBUG")
+-endif()
+-
+-if( UNIX OR CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX )
+-  set(STDC_LIBRARY stdc++)
+-else()
+-  set(STDC_LIBRARY)
+-endif()
+-
+ if( APPLE OR ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+   # apple doesn't have 64bit versions of file opening functions, so add them
+   add_definitions("-Dfopen64=fopen")

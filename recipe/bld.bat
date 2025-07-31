@@ -5,6 +5,10 @@ IF EXIST "%SRC_DIR%\dom\external-libs" (
 mkdir build
 cd build
 
+:: Ensure MiniZip headers are in the include path as the cmake's 
+:: imported target are not correctly used
+set "INCLUDE=%CONDA_PREFIX%\Library\include\minizip;%INCLUDE%"
+
 cmake ^
     -G "NMake Makefiles" -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^

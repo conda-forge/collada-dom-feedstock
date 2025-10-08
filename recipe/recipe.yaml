@@ -17,7 +17,7 @@ source:
     - patches/devendor_minizip.patch
 
 build:
-  number: 11
+  number: 12
   script:
     - if: unix
       then: build.sh
@@ -34,7 +34,7 @@ requirements:
   host:
     - libboost-devel
     - pcre
-    - libxml2
+    - libxml2-devel
     - zlib
     - minizip
     - uriparser

@@ -21,7 +21,7 @@ build:
     - if: unix
       then: build.sh
     - if: win
-      then: bld.bat
+      then: build.bat
 
 requirements:
   build:

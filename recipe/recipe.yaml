@@ -63,7 +63,7 @@ about:
   summary: 'The COLLADA Document Object Model (DOM) is an application programming interface (API) that provides a C++ object representation of a COLLADA XML instance document.'
   description: |
     COLLADA is a royalty-free XML schema that enables digital asset exchange within the interactive 3D industry. The COLLADA Document Object Model (COLLADA DOM) is an application programming interface (API) that provides a C++ object representation of a COLLADA XML instance document.
-  dev_url: https://sourceforge.net/p/collada-dom
+  repository: https://sourceforge.net/p/collada-dom
 
 extra:
   recipe-maintainers:

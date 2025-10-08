@@ -1,7 +1,13 @@
-set PKG_CONFIG_PATH=%LIBRARY_PREFIX%\share\pkgconfig
+IF EXIST "%SRC_DIR%\dom\external-libs" (
+    rmdir /s /q "%SRC_DIR%\dom\external-libs"
+)
 
 mkdir build
 cd build
+
+:: Ensure MiniZip headers are in the include path as the cmake's 
+:: imported target are not correctly used
+set "INCLUDE=%PREFIX%\Library\include\minizip;%INCLUDE%"
 
 cmake ^
     -G "NMake Makefiles" ^

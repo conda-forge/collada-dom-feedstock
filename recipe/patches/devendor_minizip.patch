@@ -1,0 +1,30 @@
+diff --git a/dom/src/modules/LIBXMLPlugin/daeLIBXMLPlugin.cpp b/dom/src/modules/LIBXMLPlugin/daeLIBXMLPlugin.cpp
+index ee18937..7b0804b 100644
+--- a/dom/src/modules/LIBXMLPlugin/daeLIBXMLPlugin.cpp
++++ b/dom/src/modules/LIBXMLPlugin/daeLIBXMLPlugin.cpp
+@@ -33,9 +33,7 @@
+ using namespace std;
+ 
+ #include <zip.h> // for saving compressed files
+-#ifdef _WIN32
+-#include <iowin32.h>
+-#else
++#ifndef _WIN32
+ #include <unistd.h>
+ #endif
+
+diff --git a/dom/CMakeLists.txt b/dom/CMakeLists.txt
+index f7ffb27..e374d5d 100644
+--- a/dom/CMakeLists.txt
++++ b/dom/CMakeLists.txt
+@@ -1,6 +1,8 @@
+ set(COLLADA_INTERNAL_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+ include_directories(${COLLADA_INTERNAL_INCLUDE})
+-set(COLLADA_LIBS minizip ${liburiparser_LIBRARIES} ${libpcrecpp_LIBRARIES} ${ZLIB_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY})
++list(REMOVE_ITEM minizip_LINK_LIBRARIES lzma)
++set(COLLADA_LIBS ${minizip_LINK_LIBRARIES} ${liburiparser_LIBRARIES} ${libpcrecpp_LIBRARIES} ${ZLIB_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY})
++link_directories(${minizip_LIBRARY_DIRS})
+
+
+ file(GLOB dae_files ${CMAKE_CURRENT_SOURCE_DIR}/src/dae/*.cpp)
+ if( LIBXML2_FOUND )

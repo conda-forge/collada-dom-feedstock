@@ -10,7 +10,7 @@ cd build
 set "INCLUDE=%PREFIX%\Library\include\minizip;%INCLUDE%"
 
 cmake ^
-    -G "NMake Makefiles" ^
+    -G "Ninja" ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -DCMAKE_BUILD_TYPE=Release ^
     %SRC_DIR%

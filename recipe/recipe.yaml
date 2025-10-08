@@ -1,0 +1,70 @@
+schema_version: 1
+
+context:
+  name: collada-dom
+  version: 2.5.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/rdiankov/${{ name }}/archive/v${{ version }}.tar.gz
+  sha256: 3be672407a7aef60b64ce4b39704b32816b0b28f61ebffd4fbd02c8012901e0d
+  patches:
+    # Backport of https://github.com/rdiankov/collada-dom/pull/43
+    - patches/43.patch
+    - patches/devendor_minizip.patch
+
+build:
+  number: 11
+  script:
+    - if: unix
+      then: build.sh
+    - if: win
+      then: build.bat
+
+requirements:
+  build:
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+    - cmake 3.*
+    - pkg-config
+    - ninja
+  host:
+    - libboost-devel
+    - pcre
+    - libxml2
+    - zlib
+    - minizip
+    - uriparser
+  run_exports:
+    - ${{ pin_subpackage(name, upper_bound='x.x') }}
+
+tests:
+  - requirements:
+      run:
+        - pkg-config
+    script:
+      - if: unix
+        then:
+          - pkg-config --modversion ${{ name }}
+          - test $PREFIX/include/collada-dom2.5
+      - if: win
+        then:
+          - if not exist %PREFIX%\\Library\\include\\collada-dom2.5 exit 1
+
+about:
+  homepage: https://sourceforge.net/p/collada-dom
+  license: MIT
+  license_family: MIT
+  license_file: licenses/license_e.txt
+  summary: 'The COLLADA Document Object Model (DOM) is an application programming interface (API) that provides a C++ object representation of a COLLADA XML instance document.'
+  description: |
+    COLLADA is a royalty-free XML schema that enables digital asset exchange within the interactive 3D industry. The COLLADA Document Object Model (COLLADA DOM) is an application programming interface (API) that provides a C++ object representation of a COLLADA XML instance document.
+  repository: https://sourceforge.net/p/collada-dom
+
+extra:
+  recipe-maintainers:
+    - jcarpent
+    - traversaro

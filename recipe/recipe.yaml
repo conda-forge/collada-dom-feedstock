@@ -28,6 +28,7 @@ requirements:
     - ${{ compiler('cxx') }}
     - ${{ stdlib("c") }}
     - cmake 3.*
+    - pkg-config
     - if: unix
       then: make
   host:

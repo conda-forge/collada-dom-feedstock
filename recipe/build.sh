@@ -13,7 +13,8 @@ cmake -GNinja ${CMAKE_ARGS} .. \
       -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_INSTALL_LIBDIR=lib \
       -DCMAKE_CXX_STANDARD=14 \
-      -DCMAKE_CXX_STANDARD_REQUIRED=ON
+      -DCMAKE_CXX_STANDARD_REQUIRED=ON \
+      -DCMAKE_MINIMUM_REQUIRED_VERSION=3.5
 
 cmake --build . --config Release
 cmake --build . --config Release --target install

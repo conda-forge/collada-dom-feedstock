@@ -1,0 +1,22 @@
+From 045ca7d536c5423d903bf5b95281e990daaadc0c Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Sun, 26 Apr 2026 17:16:35 +0200
+Subject: [PATCH] Drop system component from find_package(Boost ...)
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 20635b2..adcc250 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -159,7 +159,7 @@ endif()
+ if( NOT $ENV{BOOST_LIBRARYDIR} STREQUAL "" )
+   set(Boost_LIBRARY_DIRS $ENV{BOOST_LIBRARYDIR})
+ endif()
+-find_package(Boost COMPONENTS filesystem system REQUIRED)
++find_package(Boost COMPONENTS filesystem REQUIRED)
+ 
+ message(STATUS "found boost version: ${Boost_VERSION}")
+ 

@@ -28,7 +28,7 @@ requirements:
   build:
     - ${{ compiler('cxx') }}
     - ${{ stdlib("c") }}
-    - cmake 3.*
+    - cmake
     - pkg-config
     - ninja
   host:

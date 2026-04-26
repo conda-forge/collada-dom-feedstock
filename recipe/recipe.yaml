@@ -15,6 +15,7 @@ source:
     # Backport of https://github.com/rdiankov/collada-dom/pull/43
     - patches/43.patch
     - patches/devendor_minizip.patch
+    - patches/drop_boost_system.patch
 
 build:
   number: 14
